@@ -23,7 +23,8 @@ export function ResumeSection({ data = resumeData }: ResumeSectionProps) {
           {data.education.map((item, index) => (
             <div key={index} className="relative pl-5 md:pl-6 pb-6 border-l-2 border-border last:pb-0">
               <div className="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-accent" />
-              <h4 className="text-base md:text-lg font-semibold text-foreground mb-2">{item.title}</h4>
+              <h4 className="text-base md:text-lg font-semibold text-foreground">{item.title}</h4>
+              <p className="text-sm md:text-base text-muted-foreground mb-2">{item.institution}</p>
               <p className="text-xs md:text-sm text-accent mb-2">{item.period}</p>
               <p className="text-xs md:text-sm text-muted-foreground leading-relaxed">{item.description}</p>
             </div>
@@ -41,7 +42,8 @@ export function ResumeSection({ data = resumeData }: ResumeSectionProps) {
           {data.experience.map((item, index) => (
             <div key={index} className="relative pl-5 md:pl-6 pb-6 border-l-2 border-border last:pb-0">
               <div className="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-accent" />
-              <h4 className="text-base md:text-lg font-semibold text-foreground mb-2">{item.title}</h4>
+              <h4 className="text-base md:text-lg font-semibold text-foreground">{item.title}</h4>
+              <p className="text-sm md:text-base text-muted-foreground mb-2">{item.company}</p>
               <p className="text-xs md:text-sm text-accent mb-2">{item.period}</p>
               <p className="text-xs md:text-sm text-muted-foreground leading-relaxed">{item.description}</p>
             </div>

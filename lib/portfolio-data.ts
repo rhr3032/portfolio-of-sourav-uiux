@@ -74,36 +74,55 @@ export const aboutData = {
 export const resumeData = {
   education: [
     {
-      title: 'Patuakhali Polytechnic Institute',
+      title: 'Computer Science and Engineering',
+      institution: 'Patuakhali Polytechnic Institute',
       period: '2021 - 2022',
       description:
-        'Computer Science and Engineeringnce Diploma with a focus on software development, algorithms, and data structures. Graduated with honors and received the Best Project Award for my final year project on a web-based task management application.',
+        'Completed a comprehensive Computer Science and Engineering program with a focus on software development, algorithms, and data structures. Gained hands-on experience through projects and internships, developing a strong foundation in programming languages such as Java, Python, and C++. Graduated with honors and received recognition for outstanding academic performance.',
     },
     {
-      title: 'BDCalling Academy',
+      title: 'UI/UX Design Course',
+      institution: 'BDCalling Academy',
       period: 'September - December, 2025',
-      description: 'UI/UX Design Course covering user research, wireframing, prototyping, and visual design principles. Completed hands-on projects including a mobile app redesign and a responsive website for a local business.',
+      description: 'Completed an intensive UI/UX design course covering user research, wireframing, prototyping, and visual design principles. Developed a portfolio of design projects that demonstrate a strong understanding of user-centered design and best practices in the industry.',
     },
   ],
   experience: [
     {
-      title: 'Senior Full-Stack Developer',
-      period: '2020 — Present',
+      title: 'Junior UI/UX Designer',
+      company: 'MNTech Digital',
+      period: 'April 2026 - Present',
       description:
-        'Leading development of scalable web applications using React, Node.js, and cloud technologies. Mentoring junior developers and implementing best practices.',
+        'Collaborate with cross-functional teams to design user interfaces for web and mobile applications. Conduct user research and usability testing to inform design decisions. Create wireframes, prototypes, and high-fidelity designs using Figma and Adobe XD. Contribute to the development of design systems and style guides to ensure consistency across products.',
     },
     {
-      title: 'Full-Stack Developer',
-      period: '2018 — 2020',
+      title: 'UI/UX Designer (Intern)',
+      company: 'Bdcalling IT Ltd.',
+      period: 'January - March, 2026',
       description:
-        'Developed and maintained multiple client projects using modern web technologies. Collaborated with design teams to create seamless user experiences.',
+        'Collaborated on designing user interfaces for mobile and web applications. Conducted user research and usability testing to inform design decisions. Created wireframes, prototypes, and high-fidelity designs using Figma and Adobe XD.',
     },
   ],
   skills: [
-    { name: 'Web Design', level: 90 },
-    { name: 'Frontend Development', level: 95 },
-    { name: 'Backend Development', level: 85 },
-    { name: 'Database Design', level: 80 },
+    { name: 'UI/UX Design', level: 85 },
+    { name: 'UX Research', level: 80 },
+    { name: 'UX Strategy', level: 75 },
+    { name: 'UX Writing', level: 80 },
+    { name: 'User Testing', level: 75 },
+    { name: 'Design Systems', level: 80 },
+    { name: 'Prototyping', level: 90 },
+    { name: 'Wireframing', level: 80 },
+    { name: 'Figma, Adobe XD, Sketch', level: 90 },
+    { name: 'HTML, CSS, JavaScript', level: 30 },
+    { name: 'Project Management', level: 70 },
+    { name: 'Time Management', level: 90 },
+    { name: 'Communication', level: 95 },
+    { name: 'Problem Solving', level: 80 },
+    { name: 'Adaptability', level: 95 },
+    { name: 'Leadership', level: 50 },
+    { name: 'Teamwork', level: 100 },
+    { name: 'Creativity', level: 90 },
+    { name: 'Critical Thinking', level: 85 },
   ],
 }
 
