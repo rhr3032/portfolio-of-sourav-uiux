@@ -21,7 +21,7 @@ export function AboutSection({ data = aboutData }: AboutSectionProps) {
         <div className="w-10 h-1 bg-accent rounded-full mb-6" />
         <div className="space-y-4 text-sm md:text-base text-muted-foreground leading-relaxed">
           {data.description.map((paragraph, index) => (
-            <p key={index}>{paragraph}</p>
+            <p key={index} className="whitespace-pre-line">{paragraph}</p>
           ))}
         </div>
       </div>

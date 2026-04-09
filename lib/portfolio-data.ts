@@ -15,28 +15,28 @@ export const profileData = {
 
 export const aboutData = {
   description: [
-    "I'm a passionate UI/UX designer with over 2 years of experience in crafting intuitive and visually appealing digital experiences. I specialize in creating user-centered designs that not only look great but also provide seamless functionality. My expertise lies in understanding user needs, conducting research, and translating insights into innovative design solutions that drive engagement and satisfaction. I have a strong background in design tools such as Figma, Sketch, and Adobe Creative Suite, and I stay up-to-date with the latest design trends and best practices. I thrive in collaborative environments where I can work closely with developers, product managers, and stakeholders to bring ideas to life. My goal is to create designs that not only meet business objectives but also delight users and enhance their overall experience. I am always eager to take on new challenges and contribute my skills to create impactful digital products that make a difference. I am excited to continue growing as a designer and to work on projects that push the boundaries of creativity and innovation. I am committed to delivering high-quality designs that exceed expectations and drive meaningful results for both users and businesses.",
+    "I'm a passionate UI/UX designer with over 2 years of experience in crafting intuitive and visually appealing digital experiences. I specialize in creating user-centered designs that not only look great but also provide seamless functionality. My expertise lies in understanding user needs, conducting research, and translating insights into innovative design solutions that drive engagement and satisfaction. I have a strong background in design tools such as Figma, Sketch, and Adobe Creative Suite, and I stay up-to-date with the latest design trends and best practices. \n\nI thrive in collaborative environments where I can work closely with developers, product managers, and stakeholders to bring ideas to life. My goal is to create designs that not only meet business objectives but also delight users and enhance their overall experience. I am always eager to take on new challenges and contribute my skills to create impactful digital products that make a difference. I am excited to continue growing as a designer and to work on projects that push the boundaries of creativity and innovation. \n\nI am committed to delivering high-quality designs that exceed expectations and drive meaningful results for both users and businesses.",
   ],
   services: [
     {
+      icon: 'PenTool',
+      title: 'User-Centered Thinking',
+      description: 'Always design with the end-user in mind. Understand their needs, behaviors, and pain points through research and usability testing. A beautiful interface means little if it doesn’t solve the user’s problem.',
+    },
+    {
       icon: 'Code',
-      title: 'Frontend Development',
-      description: 'Building modern, responsive web applications with React, Next.js, and TypeScript.',
+      title: 'Strong Visual & Interaction Design',
+      description: 'Master typography, color theory, spacing, and layout. Combine aesthetics with functionality—your designs should not only look good but also guide users intuitively through interactions.',
     },
     {
       icon: 'Zap',
-      title: 'Backend Development',
-      description: 'Creating robust APIs and server-side solutions with Node.js and modern frameworks.',
+      title: 'Prototyping & Iteration',
+      description: 'Use tools like Figma, Adobe XD, or Sketch to create wireframes and interactive prototypes. Test early, gather feedback, and refine continuously. Iteration is the backbone of great UX.',
     },
     {
       icon: 'Smartphone',
-      title: 'Mobile Development',
-      description: 'Professional development of mobile applications with React Native and modern tools.',
-    },
-    {
-      icon: 'PenTool',
-      title: 'UI/UX Design',
-      description: 'Designing intuitive and beautiful user interfaces that enhance user experience.',
+      title: 'Collaboration & Communication',
+      description: 'Work closely with developers, product managers, and stakeholders. Being able to explain design decisions clearly and advocate for the user experience is just as important as the design itself.',
     },
   ],
   testimonials: [
