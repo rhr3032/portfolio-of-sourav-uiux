@@ -12,7 +12,7 @@ const poppins = Poppins({
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://example.com'
 const siteTitle = 'Sourav Sarkar - UI/UX Designer'
 const siteDescription =
-  'Portfolio of Sourav Sarkar, UI/UX Designer focused on user-centered interfaces, product design systems, and modern web experiences.'
+  'I am Sourav Sarkar, a passionate UI/UX designer based in Bangladesh, specializing in crafting intuitive and visually stunning digital experiences. With a keen eye for detail and a user-centered approach, I transforms complex ideas into elegant designs that resonate with users. Explore his portfolio to see how he brings creativity and functionality together to create impactful designs.'
 
 const personJsonLd = {
   '@context': 'https://schema.org',
