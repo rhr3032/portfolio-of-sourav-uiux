@@ -6,6 +6,7 @@ export const profileData = {
   phone: '+880 1608-175433',
   birthday: 'June 15, 1995',
   location: 'Barisal, Bangladesh',
+  resumeUrl: '/resume.pdf',
   social: {
     github: 'https://github.com/johndoe',
     twitter: 'https://twitter.com/johndoe',

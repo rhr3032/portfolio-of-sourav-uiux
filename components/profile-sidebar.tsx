@@ -1,4 +1,4 @@
-import { Mail, Phone, Calendar, MapPin } from 'lucide-react'
+import { Mail, Phone, MapPin, Download } from 'lucide-react'
 import { Github, Twitter, Instagram } from 'lucide-react'
 import { motion } from 'framer-motion'
 import { profileData } from '@/lib/portfolio-data'
@@ -93,21 +93,6 @@ export function ProfileSidebar({ data = profileData }: ProfileSidebarProps) {
         <motion.div
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.24, delay: 0.34, ease: 'easeOut' }}
-          className="flex items-start gap-3"
-        >
-          <div className="w-10 h-10 rounded-lg bg-secondary flex items-center justify-center shrink-0">
-            <Calendar className="w-5 h-5 text-accent" />
-          </div>
-          <div className="flex-1">
-            <p className="text-xs text-muted-foreground uppercase mb-1">Birthday</p>
-            <p className="text-sm text-foreground">{data.birthday}</p>
-          </div>
-        </motion.div>
-
-        <motion.div
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.24, delay: 0.41, ease: 'easeOut' }}
           className="flex items-start gap-3"
         >
@@ -117,6 +102,14 @@ export function ProfileSidebar({ data = profileData }: ProfileSidebarProps) {
           <div className="flex-1">
             <p className="text-xs text-muted-foreground uppercase mb-1">Location</p>
             <p className="text-sm text-foreground">{data.location}</p>
+            <a
+              href={data.resumeUrl}
+              download
+              className="mt-5 inline-flex items-center gap-2 px-3 py-2 rounded-lg bg-accent text-white text-xs md:text-sm font-medium hover:opacity-90 transition-opacity"
+            >
+              <Download className="w-4 h-4 text-white" />
+              Download Resume
+            </a>
           </div>
         </motion.div>
       </div>
