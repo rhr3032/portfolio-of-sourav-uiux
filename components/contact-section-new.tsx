@@ -21,33 +21,22 @@ export function ContactSection({ data = contactData }: ContactSectionProps) {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    const accessKey = process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY
-
-    if (!accessKey) {
-      setSubmitStatus({
-        type: 'error',
-        message: 'Web3Forms key is missing. Add NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY to continue.',
-      })
-      return
-    }
 
     setIsSubmitting(true)
     setSubmitStatus(null)
 
     try {
-      const response = await fetch('https://api.web3forms.com/submit', {
+      const response = await fetch('/api/contact', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
           Accept: 'application/json',
         },
         body: JSON.stringify({
-          access_key: accessKey,
           name: formData.name,
           email: formData.email,
           subject: formData.subject,
           message: formData.message,
-          from_name: formData.name,
         }),
       })
 
