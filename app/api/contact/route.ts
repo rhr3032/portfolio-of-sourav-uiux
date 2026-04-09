@@ -1,63 +1,10 @@
 import { NextResponse } from 'next/server'
-import { readFile } from 'node:fs/promises'
-import path from 'node:path'
 
 interface ContactPayload {
   name?: string
   email?: string
   subject?: string
   message?: string
-}
-
-function parseEnvLine(rawLine: string): { key: string; value: string } | null {
-  const line = rawLine.trim()
-
-  if (!line || line.startsWith('#')) {
-    return null
-  }
-
-  const separatorIndex = line.indexOf('=')
-
-  if (separatorIndex === -1) {
-    return null
-  }
-
-  const key = line.slice(0, separatorIndex).trim()
-  const rawValue = line.slice(separatorIndex + 1).trim()
-  const value = rawValue.replace(/^['\"]|['\"]$/g, '')
-
-  if (!key) {
-    return null
-  }
-
-  return { key, value }
-}
-
-async function readKeyFromEnvFiles() {
-  const envPaths = [path.join(process.cwd(), '.env.local'), path.join(process.cwd(), '.env')]
-
-  for (const envPath of envPaths) {
-    try {
-      const content = await readFile(envPath, 'utf8')
-      const lines = content.split(/\r?\n/)
-
-      for (const line of lines) {
-        const parsed = parseEnvLine(line)
-
-        if (!parsed) {
-          continue
-        }
-
-        if (parsed.key === 'WEB3FORMS_ACCESS_KEY' || parsed.key === 'NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY') {
-          return parsed.value
-        }
-      }
-    } catch {
-      // Ignore missing env files and continue to the next one.
-    }
-  }
-
-  return undefined
 }
 
 export async function POST(request: Request) {
@@ -69,14 +16,14 @@ export async function POST(request: Request) {
       return NextResponse.json({ success: false, message: 'All fields are required.' }, { status: 400 })
     }
 
-    const accessKey =
-      process.env.WEB3FORMS_ACCESS_KEY ?? process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY ?? (await readKeyFromEnvFiles())
+    const accessKey = process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY
 
     if (!accessKey) {
+      console.error('Web3Forms access key is missing')
       return NextResponse.json(
         {
           success: false,
-          message: 'Web3Forms key is missing. Add WEB3FORMS_ACCESS_KEY or NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY.',
+          message: 'Web3Forms configuration is incomplete. Please check the environment variables.',
         },
         { status: 500 }
       )
@@ -101,6 +48,7 @@ export async function POST(request: Request) {
     const web3formsResult = await web3formsResponse.json()
 
     if (!web3formsResponse.ok || !web3formsResult.success) {
+      console.error('Web3Forms error:', web3formsResult)
       return NextResponse.json(
         {
           success: false,
@@ -111,7 +59,8 @@ export async function POST(request: Request) {
     }
 
     return NextResponse.json({ success: true, message: 'Message sent successfully.' })
-  } catch {
+  } catch (error) {
+    console.error('Contact form error:', error)
     return NextResponse.json({ success: false, message: 'Unable to send message right now.' }, { status: 500 })
   }
 }
