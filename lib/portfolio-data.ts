@@ -4,7 +4,7 @@ export const profileData = {
   avatar: '/profile.png',
   email: 'workwith.akash26@gmail.com',
   phone: '+880 1608-175433',
-  birthday: 'June 15, 1995',
+  resume: 'Download',
   location: 'Barisal, Bangladesh',
   resumeUrl: '/resume.pdf',
   social: {

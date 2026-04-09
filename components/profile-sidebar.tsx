@@ -102,13 +102,26 @@ export function ProfileSidebar({ data = profileData }: ProfileSidebarProps) {
           <div className="flex-1">
             <p className="text-xs text-muted-foreground uppercase mb-1">Location</p>
             <p className="text-sm text-foreground">{data.location}</p>
+          </div>
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.24, delay: 0.57, ease: 'easeOut' }}
+          className="flex items-start gap-3"
+        >
+          <div className="w-10 h-10 rounded-lg bg-secondary flex items-center justify-center shrink-0">
+            <Download className="w-5 h-5 text-accent" />
+          </div>
+          <div className="flex-1">
+            <p className="text-xs text-muted-foreground uppercase mb-1">My Resume</p>
             <a
-              href={data.resumeUrl}
+              href={data.resumeUrl || '/resume.pdf'}
               download
-              className="mt-5 inline-flex items-center gap-2 px-3 py-2 rounded-lg bg-accent text-white text-xs md:text-sm font-medium hover:opacity-90 transition-opacity"
+              className="text-sm text-foreground hover:text-accent transition-colors"
             >
-              <Download className="w-4 h-4 text-white" />
-              Download Resume
+              Download
             </a>
           </div>
         </motion.div>
