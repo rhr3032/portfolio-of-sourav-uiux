@@ -1,7 +1,7 @@
 export const profileData = {
   name: 'Sourav Sarkar',
   title: 'UI/UX Designer',
-  avatar: '/public/profile.png',
+  avatar: '/profile.png',
   email: 'john@example.com',
   phone: '+1 (234) 567-890',
   birthday: 'June 15, 1995',
