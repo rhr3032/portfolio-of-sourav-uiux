@@ -12,13 +12,68 @@ export function ContactSection({ data = contactData }: ContactSectionProps) {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
+    subject: '',
     message: '',
   })
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [submitStatus, setSubmitStatus] = useState<{ type: 'success' | 'error'; message: string } | null>(null)
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    // Handle form submission
-    console.log('Form submitted:', formData)
+    const accessKey = process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY
+
+    if (!accessKey) {
+      setSubmitStatus({
+        type: 'error',
+        message: 'Web3Forms key is missing. Add NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY to continue.',
+      })
+      return
+    }
+
+    setIsSubmitting(true)
+    setSubmitStatus(null)
+
+    try {
+      const response = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Accept: 'application/json',
+        },
+        body: JSON.stringify({
+          access_key: accessKey,
+          name: formData.name,
+          email: formData.email,
+          subject: formData.subject,
+          message: formData.message,
+          from_name: formData.name,
+        }),
+      })
+
+      const result = await response.json()
+
+      if (!response.ok || !result.success) {
+        throw new Error(result.message || 'Something went wrong while sending your message.')
+      }
+
+      setSubmitStatus({
+        type: 'success',
+        message: 'Message sent successfully.',
+      })
+      setFormData({
+        name: '',
+        email: '',
+        subject: '',
+        message: '',
+      })
+    } catch (error) {
+      setSubmitStatus({
+        type: 'error',
+        message: error instanceof Error ? error.message : 'Unable to send message right now.',
+      })
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   return (
@@ -95,7 +150,7 @@ export function ContactSection({ data = contactData }: ContactSectionProps) {
               value={formData.name}
               onChange={(e) => setFormData({ ...formData, name: e.target.value })}
               className="w-full px-4 md:px-5 py-3 md:py-3.5 bg-secondary border border-border rounded-xl text-foreground placeholder:text-muted-foreground focus:border-accent focus:ring-2 focus:ring-accent/20 focus:outline-none transition-all text-sm md:text-base"
-              placeholder="Sourav Sarkar"
+              placeholder="Your Name"
               required
             />
           </div>
@@ -109,10 +164,25 @@ export function ContactSection({ data = contactData }: ContactSectionProps) {
               value={formData.email}
               onChange={(e) => setFormData({ ...formData, email: e.target.value })}
               className="w-full px-4 md:px-5 py-3 md:py-3.5 bg-secondary border border-border rounded-xl text-foreground placeholder:text-muted-foreground focus:border-accent focus:ring-2 focus:ring-accent/20 focus:outline-none transition-all text-sm md:text-base"
-              placeholder="sourav@example.com"
+              placeholder="your.email@example.com"
               required
             />
           </div>
+        </div>
+
+        <div>
+          <label htmlFor="subject" className="block text-sm font-medium text-foreground mb-2">
+            Subject
+          </label>
+          <input
+            type="text"
+            id="subject"
+            value={formData.subject}
+            onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
+            className="w-full px-4 md:px-5 py-3 md:py-3.5 bg-secondary border border-border rounded-xl text-foreground placeholder:text-muted-foreground focus:border-accent focus:ring-2 focus:ring-accent/20 focus:outline-none transition-all text-sm md:text-base"
+            placeholder="Project inquiry"
+            required
+          />
         </div>
 
         <div>
@@ -132,11 +202,22 @@ export function ContactSection({ data = contactData }: ContactSectionProps) {
 
         <button
           type="submit"
-          className="flex items-center justify-center gap-2 w-full md:w-auto px-6 md:px-8 py-3 md:py-3.5 bg-accent text-accent-foreground rounded-xl font-medium hover:shadow-lg hover:shadow-accent/20 hover:-translate-y-0.5 transition-all text-sm md:text-base"
+          disabled={isSubmitting}
+          className="flex items-center justify-center gap-2 w-full md:w-auto px-6 md:px-8 py-3 md:py-3.5 bg-accent text-white rounded-xl font-medium hover:shadow-lg hover:shadow-accent/20 hover:-translate-y-0.5 transition-all text-sm md:text-base"
         >
           <Send className="w-4 h-4" />
-          Send Message
+          {isSubmitting ? 'Sending...' : 'Send Message'}
         </button>
+
+        {submitStatus && (
+          <p
+            className={`text-sm ${
+              submitStatus.type === 'success' ? 'text-accent' : 'text-destructive'
+            }`}
+          >
+            {submitStatus.message}
+          </p>
+        )}
       </form>
     </div>
   )

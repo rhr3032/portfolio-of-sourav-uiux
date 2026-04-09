@@ -8,9 +8,9 @@ export const profileData = {
   location: 'Barisal, Bangladesh',
   resumeUrl: '/resume.pdf',
   social: {
-    github: 'https://github.com/johndoe',
-    twitter: 'https://twitter.com/johndoe',
-    instagram: 'https://instagram.com/johndoe',
+    instagram: 'https://www.instagram.com/sourov_saker/',
+    linkedin: 'https://www.linkedin.com/in/sourav-ux/',
+    behance: 'https://www.behance.net/sourav-creative',
   },
 }
 
@@ -427,5 +427,5 @@ export const contactData = {
   phone: '+880 1608-175433',
   location: 'Barisal, Bangladesh',
   mapEmbedUrl:
-    'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d100940.14220298434!2d-122.50764017406082!3d37.75767381338211!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80859a6d00690021%3A0x4a501367f076adff!2sSan%20Francisco%2C%20CA%2C%20USA!5e0!3m2!1sen!2sus!4v1234567890123!5m2!1sen!2sus',
+    'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d58886.43513649591!2d90.34962781463467!3d22.71328764469846!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x37553407fbece487%3A0x5d069b9599d4414a!2sBarishal%2C%20Bangladesh!5e0!3m2!1sen!2sin!4v1775736533311!5m2!1sen!2sin',
 }

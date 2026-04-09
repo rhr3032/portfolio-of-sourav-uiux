@@ -1,6 +1,6 @@
 import { Mail, Phone, MapPin, Download } from 'lucide-react'
-import { Github, Twitter, Instagram } from 'lucide-react'
 import { motion } from 'framer-motion'
+import { FaInstagram, FaLinkedinIn, FaBehance } from 'react-icons/fa'
 import { profileData } from '@/lib/portfolio-data'
 
 interface ProfileSidebarProps {
@@ -130,30 +130,6 @@ export function ProfileSidebar({ data = profileData }: ProfileSidebarProps) {
       {/* Social Links */}
       <div className="flex items-center justify-center gap-4 mt-4 md:mt-6 pt-4 md:pt-6 border-t border-border">
         <motion.a
-          href={data.social.github}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="w-10 h-10 rounded-lg bg-secondary hover:bg-accent hover:text-accent-foreground transition-colors flex items-center justify-center"
-          aria-label="GitHub"
-          whileHover={{ y: -3, scale: 1.06 }}
-          whileTap={{ scale: 0.94 }}
-          transition={{ type: 'spring', stiffness: 350, damping: 22 }}
-        >
-          <Github className="w-5 h-5" />
-        </motion.a>
-        <motion.a
-          href={data.social.twitter}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="w-10 h-10 rounded-lg bg-secondary hover:bg-accent hover:text-accent-foreground transition-colors flex items-center justify-center"
-          aria-label="Twitter"
-          whileHover={{ y: -3, scale: 1.06 }}
-          whileTap={{ scale: 0.94 }}
-          transition={{ type: 'spring', stiffness: 350, damping: 22 }}
-        >
-          <Twitter className="w-5 h-5" />
-        </motion.a>
-        <motion.a
           href={data.social.instagram}
           target="_blank"
           rel="noopener noreferrer"
@@ -163,7 +139,31 @@ export function ProfileSidebar({ data = profileData }: ProfileSidebarProps) {
           whileTap={{ scale: 0.94 }}
           transition={{ type: 'spring', stiffness: 350, damping: 22 }}
         >
-          <Instagram className="w-5 h-5" />
+          <FaInstagram className="w-5 h-5" />
+        </motion.a>
+        <motion.a
+          href={data.social.linkedin}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="w-10 h-10 rounded-lg bg-secondary hover:bg-accent hover:text-accent-foreground transition-colors flex items-center justify-center"
+          aria-label="LinkedIn"
+          whileHover={{ y: -3, scale: 1.06 }}
+          whileTap={{ scale: 0.94 }}
+          transition={{ type: 'spring', stiffness: 350, damping: 22 }}
+        >
+          <FaLinkedinIn className="w-5 h-5" />
+        </motion.a>
+        <motion.a
+          href={data.social.behance}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="w-10 h-10 rounded-lg bg-secondary hover:bg-accent hover:text-accent-foreground transition-colors flex items-center justify-center"
+          aria-label="Behance"
+          whileHover={{ y: -3, scale: 1.06 }}
+          whileTap={{ scale: 0.94 }}
+          transition={{ type: 'spring', stiffness: 350, damping: 22 }}
+        >
+          <FaBehance className="w-5 h-5" />
         </motion.a>
       </div>
     </motion.aside>
