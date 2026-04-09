@@ -15,7 +15,7 @@ export const profileData = {
 
 export const aboutData = {
   description: [
-    "I'm a Full-Stack Developer from San Francisco, California, specializing in web development and creating innovative digital solutions. I enjoy turning complex problems into simple, beautiful and intuitive applications.",
+    " from San Francisco, California, specializing in web development and creating innovative digital solutI'm a Full-Stack Developerions. I enjoy turning complex problems into simple, beautiful and intuitive applications.",
     "My job is to build your website or application so that it is functional and user-friendly but at the same time attractive. Moreover, I add personal touch to your product and make sure that is eye-catching and easy to use. My aim is to bring across your message and identity in the most creative way. I've worked with various technologies including React, Next.js, Node.js, and modern cloud platforms.",
   ],
   services: [
