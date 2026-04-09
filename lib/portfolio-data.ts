@@ -29,12 +29,12 @@ export const aboutData = {
       description: 'Master typography, color theory, spacing, and layout. Combine aesthetics with functionality—your designs should not only look good but also guide users intuitively through interactions.',
     },
     {
-      icon: 'Zap',
+      icon: 'Smartphone',
       title: 'Prototyping & Iteration',
       description: 'Use tools like Figma, Adobe XD, or Sketch to create wireframes and interactive prototypes. Test early, gather feedback, and refine continuously. Iteration is the backbone of great UX.',
     },
     {
-      icon: 'Smartphone',
+      icon: 'Zap',
       title: 'Collaboration & Communication',
       description: 'Work closely with developers, product managers, and stakeholders. Being able to explain design decisions clearly and advocate for the user experience is just as important as the design itself.',
     },
@@ -43,22 +43,22 @@ export const aboutData = {
     {
       avatar: '/professional-man.jpg',
       name: 'Daniel Lewis',
-      text: 'John was hired to create a corporate identity. We were very pleased with the work done. He has a lot of experience and is very concerned about the needs of client.',
+      text: 'Sourav is an exceptional designer who consistently delivers high-quality work. His ability to understand user needs and translate them into beautiful, functional designs is impressive. He’s a pleasure to work with and always goes above and beyond to ensure client satisfaction.',
     },
     {
       avatar: '/professional-woman-diverse.png',
       name: 'Jessica Miller',
-      text: 'John was hired to create a corporate identity. We were very pleased with the work done. He has a lot of experience and is very concerned about the needs of client.',
+      text: 'Sourav is an exceptional designer who consistently delivers high-quality work. His ability to understand user needs and translate them into beautiful, functional designs is impressive. He’s a pleasure to work with and always goes above and beyond to ensure client satisfaction.',
     },
     {
       avatar: '/professional-man.jpg',
       name: 'Michael Chen',
-      text: 'Outstanding work! John delivered a high-quality product that exceeded our expectations. His attention to detail is remarkable.',
+      text: 'Sourav is a talented designer with a keen eye for detail. He has a deep understanding of user experience principles and consistently creates designs that are both visually stunning and highly usable. His professionalism and dedication make him an invaluable asset to any project.',
     },
     {
       avatar: '/professional-woman-diverse.png',
       name: 'Sarah Johnson',
-      text: 'Professional, creative, and highly skilled. John is the developer you want on your team for any complex project.',
+      text: 'Sourav is a fantastic designer who brings creativity and innovation to every project. His ability to empathize with users and create designs that truly resonate with them is remarkable. He’s a great collaborator and always delivers work that exceeds expectations.',
     },
   ],
   clients: [
@@ -74,15 +74,15 @@ export const aboutData = {
 export const resumeData = {
   education: [
     {
-      title: 'University of California, Berkeley',
-      period: '2013 — 2017',
+      title: 'Patuakhali Polytechnic Institute',
+      period: '2021 - 2022',
       description:
-        'Studied Computer Science with a focus on web technologies and software engineering principles.',
+        'Computer Science and Engineeringnce Diploma with a focus on software development, algorithms, and data structures. Graduated with honors and received the Best Project Award for my final year project on a web-based task management application.',
     },
     {
-      title: 'Frontend Development Bootcamp',
-      period: '2017 — 2018',
-      description: 'Intensive program covering modern JavaScript frameworks, responsive design, and UX principles.',
+      title: 'BDCalling Academy',
+      period: 'September - December, 2025',
+      description: 'UI/UX Design Course covering user research, wireframing, prototyping, and visual design principles. Completed hands-on projects including a mobile app redesign and a responsive website for a local business.',
     },
   ],
   experience: [
