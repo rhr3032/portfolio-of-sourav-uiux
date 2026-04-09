@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import { motion } from 'framer-motion'
 import { ExternalLink, Eye } from 'lucide-react'
 import { portfolioData } from '@/lib/portfolio-data'
 
@@ -15,18 +16,25 @@ export function PortfolioSection({ data = portfolioData }: PortfolioSectionProps
     activeFilter === 'all' ? data.projects : data.projects.filter((p) => p.category === activeFilter)
 
   return (
-    <div className="space-y-6 md:space-y-8">
-      <div>
+    <motion.div
+      initial={{ opacity: 0, y: 16 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.35, ease: 'easeOut' }}
+      className="space-y-6 md:space-y-8"
+    >
+      <motion.div initial={{ opacity: 0, y: 14 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.3 }}>
         <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-4">Portfolio</h2>
         <div className="w-10 h-1 bg-accent rounded-full mb-6" />
-      </div>
+      </motion.div>
 
       {/* Filter Buttons */}
-      <div className="flex flex-wrap gap-2 md:gap-3">
+      <motion.div className="flex flex-wrap gap-2 md:gap-3" initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} transition={{ duration: 0.25 }}>
         {data.categories.map((category) => (
-          <button
+          <motion.button
             key={category}
             onClick={() => setActiveFilter(category)}
+            whileHover={{ y: -2 }}
+            whileTap={{ scale: 0.97 }}
             className={`px-4 md:px-5 py-2 md:py-2.5 rounded-xl text-xs md:text-sm font-medium capitalize transition-all ${
               activeFilter === category
                 ? 'bg-accent text-accent-foreground shadow-lg shadow-accent/20'
@@ -34,14 +42,18 @@ export function PortfolioSection({ data = portfolioData }: PortfolioSectionProps
             }`}
           >
             {category}
-          </button>
+          </motion.button>
         ))}
-      </div>
+      </motion.div>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
         {filteredProjects.map((project, index) => (
-          <div
+          <motion.div
             key={index}
+            initial={{ opacity: 0, y: 14 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.28, delay: index * 0.04 }}
             className="group relative bg-secondary rounded-xl md:rounded-2xl border border-border overflow-hidden hover:border-accent transition-all duration-300 hover:shadow-xl hover:shadow-accent/10"
           >
             <div className="aspect-[4/3] overflow-hidden bg-background">
@@ -84,9 +96,9 @@ export function PortfolioSection({ data = portfolioData }: PortfolioSectionProps
             <div className="absolute top-3 right-3 md:top-4 md:right-4 px-2.5 md:px-3 py-1 md:py-1.5 bg-background/90 backdrop-blur-sm border border-border rounded-lg text-xs font-medium text-accent capitalize">
               {project.category}
             </div>
-          </div>
+          </motion.div>
         ))}
       </div>
-    </div>
+    </motion.div>
   )
 }

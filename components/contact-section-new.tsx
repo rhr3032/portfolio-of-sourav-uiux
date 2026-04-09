@@ -2,6 +2,7 @@
 
 import { Mail, Phone, MapPin, Send } from 'lucide-react'
 import { useState } from 'react'
+import { motion } from 'framer-motion'
 import { contactData } from '@/lib/portfolio-data'
 
 interface ContactSectionProps {
@@ -77,13 +78,24 @@ export function ContactSection({ data = contactData }: ContactSectionProps) {
   }
 
   return (
-    <div className="space-y-6 md:space-y-8">
-      <div>
+    <motion.div
+      initial={{ opacity: 0, y: 16 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.35, ease: 'easeOut' }}
+      className="space-y-6 md:space-y-8"
+    >
+      <motion.div initial={{ opacity: 0, y: 14 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.3 }}>
         <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-4">Contact</h2>
         <div className="w-10 h-1 bg-accent rounded-full mb-6" />
-      </div>
+      </motion.div>
 
-      <div className="w-full h-64 md:h-80 rounded-xl md:rounded-2xl overflow-hidden border border-border bg-secondary">
+      <motion.div
+        initial={{ opacity: 0, y: 12 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.3, delay: 0.05 }}
+        className="w-full h-64 md:h-80 rounded-xl md:rounded-2xl overflow-hidden border border-border bg-secondary"
+      >
         <iframe
           src={data.mapEmbedUrl}
           width="100%"
@@ -94,10 +106,16 @@ export function ContactSection({ data = contactData }: ContactSectionProps) {
           referrerPolicy="no-referrer-when-downgrade"
           title="Office Location"
         />
-      </div>
+      </motion.div>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-3 md:gap-4">
-        <div className="flex items-center gap-3 md:gap-4 p-4 md:p-5 bg-secondary rounded-xl md:rounded-2xl border border-border hover:border-accent transition-colors group">
+        <motion.div
+          initial={{ opacity: 0, y: 12 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.25, delay: 0.08 }}
+          className="flex items-center gap-3 md:gap-4 p-4 md:p-5 bg-secondary rounded-xl md:rounded-2xl border border-border hover:border-accent transition-colors group"
+        >
           <div className="w-12 h-12 md:w-14 md:h-14 bg-accent/10 rounded-xl flex items-center justify-center flex-shrink-0 group-hover:bg-accent/20 transition-colors">
             <Mail className="w-5 h-5 md:w-6 md:h-6 text-accent" />
           </div>
@@ -110,9 +128,15 @@ export function ContactSection({ data = contactData }: ContactSectionProps) {
               {data.email}
             </a>
           </div>
-        </div>
+        </motion.div>
 
-        <div className="flex items-center gap-3 md:gap-4 p-4 md:p-5 bg-secondary rounded-xl md:rounded-2xl border border-border hover:border-accent transition-colors group">
+        <motion.div
+          initial={{ opacity: 0, y: 12 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.25, delay: 0.12 }}
+          className="flex items-center gap-3 md:gap-4 p-4 md:p-5 bg-secondary rounded-xl md:rounded-2xl border border-border hover:border-accent transition-colors group"
+        >
           <div className="w-12 h-12 md:w-14 md:h-14 bg-accent/10 rounded-xl flex items-center justify-center flex-shrink-0 group-hover:bg-accent/20 transition-colors">
             <Phone className="w-5 h-5 md:w-6 md:h-6 text-accent" />
           </div>
@@ -125,9 +149,15 @@ export function ContactSection({ data = contactData }: ContactSectionProps) {
               {data.phone}
             </a>
           </div>
-        </div>
+        </motion.div>
 
-        <div className="flex items-center gap-3 md:gap-4 p-4 md:p-5 bg-secondary rounded-xl md:rounded-2xl border border-border hover:border-accent transition-colors group">
+        <motion.div
+          initial={{ opacity: 0, y: 12 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.25, delay: 0.16 }}
+          className="flex items-center gap-3 md:gap-4 p-4 md:p-5 bg-secondary rounded-xl md:rounded-2xl border border-border hover:border-accent transition-colors group"
+        >
           <div className="w-12 h-12 md:w-14 md:h-14 bg-accent/10 rounded-xl flex items-center justify-center flex-shrink-0 group-hover:bg-accent/20 transition-colors">
             <MapPin className="w-5 h-5 md:w-6 md:h-6 text-accent" />
           </div>
@@ -135,10 +165,17 @@ export function ContactSection({ data = contactData }: ContactSectionProps) {
             <h3 className="text-xs md:text-sm font-medium text-muted-foreground mb-1">Location</h3>
             <p className="text-sm md:text-base text-foreground font-medium">{data.location}</p>
           </div>
-        </div>
+        </motion.div>
       </div>
 
-      <form onSubmit={handleSubmit} className="space-y-5 md:space-y-6">
+      <motion.form
+        onSubmit={handleSubmit}
+        initial={{ opacity: 0, y: 12 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.3, delay: 0.2 }}
+        className="space-y-5 md:space-y-6"
+      >
         <div className="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-6">
           <div>
             <label htmlFor="name" className="block text-sm font-medium text-foreground mb-2">
@@ -218,7 +255,7 @@ export function ContactSection({ data = contactData }: ContactSectionProps) {
             {submitStatus.message}
           </p>
         )}
-      </form>
-    </div>
+      </motion.form>
+    </motion.div>
   )
 }

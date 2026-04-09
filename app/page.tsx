@@ -22,7 +22,12 @@ export default function Home() {
   const [activeSection, setActiveSection] = useState('about')
 
   return (
-    <div className="min-h-screen bg-background p-3 sm:p-4 md:p-6 lg:p-12">
+    <motion.div
+      initial={{ opacity: 0, y: 18 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.4, ease: 'easeOut' }}
+      className="min-h-screen bg-background p-3 sm:p-4 md:p-6 lg:p-12"
+    >
       <div className="fixed top-4 right-4 md:top-6 md:right-6 z-50">
         <ThemeToggle />
       </div>
@@ -36,9 +41,11 @@ export default function Home() {
             {/* Navigation */}
             <nav className="flex gap-1 sm:gap-2 md:gap-4 p-3 sm:p-4 md:p-6 border-b border-border overflow-x-auto scrollbar-hide">
               {['about', 'resume', 'portfolio', 'blog', 'contact'].map((section) => (
-                <button
+                <motion.button
                   key={section}
                   onClick={() => setActiveSection(section)}
+                  whileHover={{ y: -2 }}
+                  whileTap={{ scale: 0.97 }}
                   className={`px-3 sm:px-4 py-2 rounded-lg text-xs sm:text-sm font-medium capitalize transition-colors whitespace-nowrap shrink-0 ${
                     activeSection === section
                       ? 'text-foreground bg-accent/10'
@@ -46,7 +53,7 @@ export default function Home() {
                   }`}
                 >
                   {section}
-                </button>
+                </motion.button>
               ))}
             </nav>
 
@@ -70,6 +77,6 @@ export default function Home() {
           </main>
         </div>
       </div>
-    </div>
+    </motion.div>
   )
 }

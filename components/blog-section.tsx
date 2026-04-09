@@ -1,4 +1,7 @@
+"use client"
+
 import { Calendar, Clock, ArrowRight } from 'lucide-react'
+import { motion } from 'framer-motion'
 import { blogData } from '@/lib/portfolio-data'
 
 interface BlogSectionProps {
@@ -7,16 +10,25 @@ interface BlogSectionProps {
 
 export function BlogSection({ data = blogData }: BlogSectionProps) {
   return (
-    <div className="space-y-6 md:space-y-8">
-      <div>
+    <motion.div
+      initial={{ opacity: 0, y: 16 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.35, ease: 'easeOut' }}
+      className="space-y-6 md:space-y-8"
+    >
+      <motion.div initial={{ opacity: 0, y: 14 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.3 }}>
         <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-4">Blog</h2>
         <div className="w-10 h-1 bg-accent rounded-full mb-6" />
-      </div>
+      </motion.div>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
         {data.posts.map((post, index) => (
-          <article
+          <motion.article
             key={index}
+            initial={{ opacity: 0, y: 14 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.28, delay: index * 0.04 }}
             className="group bg-secondary rounded-xl md:rounded-2xl border border-border overflow-hidden hover:border-accent hover:shadow-lg hover:shadow-accent/10 transition-all duration-300"
           >
             <div className="aspect-video overflow-hidden bg-background">
@@ -66,9 +78,9 @@ export function BlogSection({ data = blogData }: BlogSectionProps) {
                 <ArrowRight className="w-3.5 h-3.5 md:w-4 md:h-4" />
               </a>
             </div>
-          </article>
+          </motion.article>
         ))}
       </div>
-    </div>
+    </motion.div>
   )
 }
