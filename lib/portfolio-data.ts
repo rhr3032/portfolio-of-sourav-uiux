@@ -110,24 +110,24 @@ export const resumeData = {
     { name: 'UX Writing', level: 80 },
     { name: 'User Testing', level: 75 },
     { name: 'Design Systems', level: 80 },
-    { name: 'Prototyping', level: 90 },
+    { name: 'Prototyping', level: 85 },
     { name: 'Wireframing', level: 80 },
     { name: 'Figma, Adobe XD, Sketch', level: 90 },
     { name: 'HTML, CSS, JavaScript', level: 30 },
     { name: 'Project Management', level: 70 },
     { name: 'Time Management', level: 90 },
-    { name: 'Communication', level: 95 },
+    { name: 'Communication', level: 75 },
     { name: 'Problem Solving', level: 80 },
     { name: 'Adaptability', level: 95 },
     { name: 'Leadership', level: 50 },
-    { name: 'Teamwork', level: 100 },
+    { name: 'Teamwork', level: 90 },
     { name: 'Creativity', level: 90 },
     { name: 'Critical Thinking', level: 85 },
   ],
 }
 
 export const portfolioData = {
-  categories: ['all', 'web design', 'applications', 'web development'],
+  categories: ['all', 'website design', 'app design', 'dashboard design'],
   projects: [
     {
       title: 'E-Commerce Platform',
