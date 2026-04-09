@@ -1,7 +1,7 @@
 export const profileData = {
   name: 'Sourav Sarkar',
   title: 'UI/UX Designer',
-  avatar: '/profile.png',
+  avatar: '/public/profile.png',
   email: 'john@example.com',
   phone: '+1 (234) 567-890',
   birthday: 'June 15, 1995',
@@ -15,8 +15,7 @@ export const profileData = {
 
 export const aboutData = {
   description: [
-    " from San Francisco, California, specializing in web development and creating innovative digital solutI'm a Full-Stack Developerions. I enjoy turning complex problems into simple, beautiful and intuitive applications.",
-    "My job is to build your website or application so that it is functional and user-friendly but at the same time attractive. Moreover, I add personal touch to your product and make sure that is eye-catching and easy to use. My aim is to bring across your message and identity in the most creative way. I've worked with various technologies including React, Next.js, Node.js, and modern cloud platforms.",
+    "I'm a passionate UI/UX designer with over 2 years of experience in crafting intuitive and visually appealing digital experiences. I specialize in creating user-centered designs that not only look great but also provide seamless functionality. My expertise lies in understanding user needs, conducting research, and translating insights into innovative design solutions that drive engagement and satisfaction. I have a strong background in design tools such as Figma, Sketch, and Adobe Creative Suite, and I stay up-to-date with the latest design trends and best practices. I thrive in collaborative environments where I can work closely with developers, product managers, and stakeholders to bring ideas to life. My goal is to create designs that not only meet business objectives but also delight users and enhance their overall experience. I am always eager to take on new challenges and contribute my skills to create impactful digital products that make a difference. I am excited to continue growing as a designer and to work on projects that push the boundaries of creativity and innovation. I am committed to delivering high-quality designs that exceed expectations and drive meaningful results for both users and businesses.",
   ],
   services: [
     {
