@@ -131,7 +131,7 @@ export const portfolioData = {
   projects: [
     {
       title: 'E-Commerce Platform',
-      category: 'web development',
+      category: 'website design',
       image: '/modern-ecommerce-website.png',
       description: 'Full-stack e-commerce solution with payment integration',
       tech: ['Next.js', 'Node.js', 'PostgreSQL'],
@@ -140,7 +140,7 @@ export const portfolioData = {
     },
     {
       title: 'Task Management App',
-      category: 'applications',
+      category: 'app design',
       image: '/task-management-interface.png',
       description: 'Collaborative task manager with real-time updates',
       tech: ['React', 'Firebase', 'TypeScript'],
@@ -149,7 +149,7 @@ export const portfolioData = {
     },
     {
       title: 'Portfolio Website',
-      category: 'web design',
+      category: 'website design',
       image: '/minimalist-portfolio-design.jpg',
       description: 'Modern portfolio design for creative professionals',
       tech: ['Next.js', 'Tailwind CSS', 'Framer Motion'],
@@ -158,7 +158,7 @@ export const portfolioData = {
     },
     {
       title: 'Social Media Dashboard',
-      category: 'web development',
+      category: 'dashboard design',
       image: '/analytics-dashboard.png',
       description: 'Analytics dashboard with data visualization',
       tech: ['React', 'D3.js', 'Express'],
@@ -167,7 +167,7 @@ export const portfolioData = {
     },
     {
       title: 'Mobile Banking App',
-      category: 'applications',
+      category: 'app design',
       image: '/banking-app-interface.png',
       description: 'Secure mobile banking application',
       tech: ['React Native', 'Node.js', 'MongoDB'],
@@ -176,7 +176,7 @@ export const portfolioData = {
     },
     {
       title: 'Restaurant Website',
-      category: 'web design',
+      category: 'website design',
       image: '/restaurant-website-design.png',
       description: 'Elegant restaurant website with online ordering',
       tech: ['Next.js', 'Sanity CMS', 'Stripe'],
