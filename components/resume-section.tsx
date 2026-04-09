@@ -13,16 +13,16 @@ export function ResumeSection({ data = resumeData }: ResumeSectionProps) {
     <motion.div
       initial={{ opacity: 0, y: 16 }}
       animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.35, ease: 'easeOut' }}
+      transition={{ duration: 0.15, ease: 'easeOut' }}
       className="space-y-8 md:space-y-10"
     >
-      <motion.div initial={{ opacity: 0, y: 14 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.3 }}>
+      <motion.div initial={{ opacity: 0, y: 14 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.2 }}>
         <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-4">Resume</h2>
         <div className="w-10 h-1 bg-accent rounded-full mb-6" />
       </motion.div>
 
       {/* Education */}
-      <motion.div initial={{ opacity: 0, y: 14 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.3, delay: 0.05 }}>
+      <motion.div initial={{ opacity: 0, y: 14 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.2, delay: 0.03 }}>
         <div className="flex items-center gap-2 md:gap-3 mb-6">
           <BookOpen className="w-5 h-5 md:w-6 md:h-6 text-accent" />
           <h3 className="text-xl md:text-2xl font-bold text-foreground">Education</h3>
@@ -34,7 +34,7 @@ export function ResumeSection({ data = resumeData }: ResumeSectionProps) {
               initial={{ opacity: 0, y: 12 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.28, delay: index * 0.06 }}
+              transition={{ duration: 0.18, delay: index * 0.025 }}
               className="relative pl-5 md:pl-6 pb-6 border-l-2 border-border last:pb-0"
             >
               <div className="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-accent" />
@@ -48,7 +48,7 @@ export function ResumeSection({ data = resumeData }: ResumeSectionProps) {
       </motion.div>
 
       {/* Experience */}
-      <motion.div initial={{ opacity: 0, y: 14 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.3, delay: 0.08 }}>
+      <motion.div initial={{ opacity: 0, y: 14 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.2, delay: 0.03 }}>
         <div className="flex items-center gap-2 md:gap-3 mb-6">
           <Briefcase className="w-5 h-5 md:w-6 md:h-6 text-accent" />
           <h3 className="text-xl md:text-2xl font-bold text-foreground">Experience</h3>
@@ -60,7 +60,7 @@ export function ResumeSection({ data = resumeData }: ResumeSectionProps) {
               initial={{ opacity: 0, y: 12 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.28, delay: index * 0.06 }}
+              transition={{ duration: 0.18, delay: index * 0.025 }}
               className="relative pl-5 md:pl-6 pb-6 border-l-2 border-border last:pb-0"
             >
               <div className="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-accent" />
@@ -74,7 +74,7 @@ export function ResumeSection({ data = resumeData }: ResumeSectionProps) {
       </motion.div>
 
       {/* Skills */}
-      <motion.div initial={{ opacity: 0, y: 14 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.3, delay: 0.1 }}>
+      <motion.div initial={{ opacity: 0, y: 14 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.2, delay: 0.06 }}>
         <h3 className="text-xl md:text-2xl font-bold text-foreground mb-6">My Skills</h3>
         <div className="space-y-5 md:space-y-6">
           {data.skills.map((skill, index) => (
@@ -83,7 +83,7 @@ export function ResumeSection({ data = resumeData }: ResumeSectionProps) {
               initial={{ opacity: 0, y: 12 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.25, delay: index * 0.03 }}
+              transition={{ duration: 0.16, delay: index * 0.02 }}
             >
               <div className="flex justify-between mb-2">
                 <span className="text-xs md:text-sm font-medium text-foreground">{skill.name}</span>
@@ -95,7 +95,7 @@ export function ResumeSection({ data = resumeData }: ResumeSectionProps) {
                   initial={{ width: 0 }}
                   whileInView={{ width: `${skill.level}%` }}
                   viewport={{ once: true }}
-                  transition={{ duration: 0.8, ease: 'easeOut' }}
+                  transition={{ duration: 0.55, ease: 'easeOut' }}
                   style={{ width: `${skill.level}%` }}
                 />
               </div>

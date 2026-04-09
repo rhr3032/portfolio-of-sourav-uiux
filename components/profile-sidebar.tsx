@@ -12,7 +12,7 @@ export function ProfileSidebar({ data = profileData }: ProfileSidebarProps) {
     <motion.aside
       initial={{ opacity: 0, x: -24 }}
       animate={{ opacity: 1, x: 0 }}
-      transition={{ duration: 0.35, ease: 'easeOut' }}
+      transition={{ duration: 0.15, ease: 'easeOut' }}
       className="w-full lg:w-80 bg-card rounded-2xl border border-border p-4 md:p-6 lg:sticky lg:top-8 h-fit"
     >
       {/* Profile Image */}
@@ -20,21 +20,21 @@ export function ProfileSidebar({ data = profileData }: ProfileSidebarProps) {
         <motion.div
           initial={{ opacity: 0, scale: 0.94, y: 8 }}
           animate={{ opacity: 1, scale: 1, y: 0 }}
-          transition={{ duration: 0.32, delay: 0.1, ease: 'easeOut' }}
+          transition={{ duration: 0.22, delay: 0.06, ease: 'easeOut' }}
           className="relative w-28 h-32 md:w-36 md:h-40 mb-4 md:mb-6"
         >
           <div className="absolute inset-0 rounded-3xl bg-linear-to-br from-accent/20 via-accent/5 to-transparent animate-pulse-slow" />
           <motion.div
             className="absolute inset-0.5 rounded-3xl bg-secondary overflow-hidden"
             animate={{ scale: [1, 1.04, 1], opacity: [1, 0.9, 1] }}
-            transition={{ duration: 1.8, repeat: Infinity, ease: 'easeInOut' }}
+            transition={{ duration: 1.1, repeat: Infinity, ease: 'easeInOut' }}
             whileHover={{ scale: 1.03 }}
           >
             <motion.img
               src={data.avatar || "/placeholder.svg"}
               alt={data.name}
               className="w-full h-full object-cover object-top"
-              transition={{ duration: 0.25, ease: 'easeOut' }}
+              transition={{ duration: 0.16, ease: 'easeOut' }}
             />
           </motion.div>
         </motion.div>
@@ -53,7 +53,7 @@ export function ProfileSidebar({ data = profileData }: ProfileSidebarProps) {
         <motion.div
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.24, delay: 0.2, ease: 'easeOut' }}
+          transition={{ duration: 0.15, delay: 0.10, ease: 'easeOut' }}
           className="flex items-start gap-3"
         >
           <div className="w-10 h-10 rounded-lg bg-secondary flex items-center justify-center shrink-0">
@@ -73,7 +73,7 @@ export function ProfileSidebar({ data = profileData }: ProfileSidebarProps) {
         <motion.div
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.24, delay: 0.27, ease: 'easeOut' }}
+          transition={{ duration: 0.15, delay: 0.14, ease: 'easeOut' }}
           className="flex items-start gap-3"
         >
           <div className="w-10 h-10 rounded-lg bg-secondary flex items-center justify-center shrink-0">
@@ -93,7 +93,7 @@ export function ProfileSidebar({ data = profileData }: ProfileSidebarProps) {
         <motion.div
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.24, delay: 0.41, ease: 'easeOut' }}
+          transition={{ duration: 0.15, delay: 0.18, ease: 'easeOut' }}
           className="flex items-start gap-3"
         >
           <div className="w-10 h-10 rounded-lg bg-secondary flex items-center justify-center shrink-0">
@@ -108,7 +108,7 @@ export function ProfileSidebar({ data = profileData }: ProfileSidebarProps) {
         <motion.div
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.24, delay: 0.57, ease: 'easeOut' }}
+          transition={{ duration: 0.15, delay: 0.22, ease: 'easeOut' }}
           className="flex items-start gap-3"
         >
           <div className="w-10 h-10 rounded-lg bg-secondary flex items-center justify-center shrink-0">

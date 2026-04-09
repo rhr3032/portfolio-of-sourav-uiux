@@ -25,7 +25,7 @@ export default function Home() {
     <motion.div
       initial={{ opacity: 0, y: 18 }}
       animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.4, ease: 'easeOut' }}
+      transition={{ duration: 0.18, ease: 'easeOut' }}
       className="min-h-screen bg-background p-3 sm:p-4 md:p-6 lg:p-12"
     >
       <div className="fixed top-4 right-4 md:top-6 md:right-6 z-50">
@@ -64,7 +64,7 @@ export default function Home() {
                   initial={{ opacity: 0, y: 14 }}
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -14 }}
-                  transition={{ duration: 0.28, ease: 'easeOut' }}
+                  transition={{ duration: 0.18, ease: 'easeOut' }}
                 >
                   {activeSection === 'about' && <AboutSection data={aboutData} />}
                   {activeSection === 'resume' && <ResumeSection data={resumeData} />}

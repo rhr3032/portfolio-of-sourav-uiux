@@ -13,10 +13,10 @@ export function BlogSection({ data = blogData }: BlogSectionProps) {
     <motion.div
       initial={{ opacity: 0, y: 16 }}
       animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.35, ease: 'easeOut' }}
+      transition={{ duration: 0.15, ease: 'easeOut' }}
       className="space-y-6 md:space-y-8"
     >
-      <motion.div initial={{ opacity: 0, y: 14 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.3 }}>
+      <motion.div initial={{ opacity: 0, y: 14 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.2 }}>
         <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-4">Blog</h2>
         <div className="w-10 h-1 bg-accent rounded-full mb-6" />
       </motion.div>
@@ -28,7 +28,7 @@ export function BlogSection({ data = blogData }: BlogSectionProps) {
             initial={{ opacity: 0, y: 14 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.28, delay: index * 0.04 }}
+            transition={{ duration: 0.18, delay: index * 0.025 }}
             className="group bg-secondary rounded-xl md:rounded-2xl border border-border overflow-hidden hover:border-accent hover:shadow-lg hover:shadow-accent/10 transition-all duration-300"
           >
             <div className="aspect-video overflow-hidden bg-background">

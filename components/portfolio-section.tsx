@@ -19,16 +19,16 @@ export function PortfolioSection({ data = portfolioData }: PortfolioSectionProps
     <motion.div
       initial={{ opacity: 0, y: 16 }}
       animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.35, ease: 'easeOut' }}
+      transition={{ duration: 0.15, ease: 'easeOut' }}
       className="space-y-6 md:space-y-8"
     >
-      <motion.div initial={{ opacity: 0, y: 14 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.3 }}>
+      <motion.div initial={{ opacity: 0, y: 14 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.2 }}>
         <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-4">Portfolio</h2>
         <div className="w-10 h-1 bg-accent rounded-full mb-6" />
       </motion.div>
 
       {/* Filter Buttons */}
-      <motion.div className="flex flex-wrap gap-2 md:gap-3" initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} transition={{ duration: 0.25 }}>
+      <motion.div className="flex flex-wrap gap-2 md:gap-3" initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} transition={{ duration: 0.16 }}>
         {data.categories.map((category) => (
           <motion.button
             key={category}
@@ -53,7 +53,7 @@ export function PortfolioSection({ data = portfolioData }: PortfolioSectionProps
             initial={{ opacity: 0, y: 14 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.28, delay: index * 0.04 }}
+            transition={{ duration: 0.18, delay: index * 0.025 }}
             className="group relative bg-secondary rounded-xl md:rounded-2xl border border-border overflow-hidden hover:border-accent transition-all duration-300 hover:shadow-xl hover:shadow-accent/10"
           >
             <div className="aspect-[4/3] overflow-hidden bg-background">
